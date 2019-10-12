@@ -55,14 +55,14 @@ default: ''
 usage: roulette's body image, its zIndex is bigger than highlight;      
 HIGHLY RECOMMENDED: the ratio of this image should be square
 
-#### PS: you can put your roulette's body image on one of them or both; just due to different design, something will be under the highlight and something will be on the highlight, so let you have more option to combine your roulette
-
+#### PS1: you can put your roulette's body image on one of them or both; just due to different design, something will be under the highlight and something will be on the highlight, so let you have more option to combine your roulette
+#### PS2: your roulette should put like this: ![alt text](https://event.hearst.com.tw/uiuxstoredemo/roulettegame/images/correct_rou.jpg) not like this: ![alt text](https://event.hearst.com.tw/uiuxstoredemo/roulettegame/images/wrong_rou.jpg)
 
 
 ### highlight_img
 type: string        
 default: ''      
-usage: when roulette rotate over, hightlight will bling bling, its purpose is to highlight the prize user get;      
+usage: when roulette rotate over, hightlight will bling bling, its purpose is to highlight the winning-prize;      
 HIGHLY RECOMMENDED: the ratio of this image should be square
 
 
@@ -70,15 +70,17 @@ HIGHLY RECOMMENDED: the ratio of this image should be square
 ### pointer_img
 type: string        
 default: ''      
-usage: to point which prize you win, always point on the top of roulette;       
+usage: to point the winning-prize;       
 HIGHLY RECOMMENDED: the ratio of this image should be square
+
+#### PS: the prize you win always on top, like this:![alt text](https://event.hearst.com.tw/uiuxstoredemo/roulettegame/images/winning.jpg), so your pointer should always poit toward that one
 
 
 
 ### prize_arr
 type: array       
-default: []      
-usage: how many prize in your roulette, then there should be how many item in this props; the order is counter-clockwise to your roulette
+required     
+usage: how many prize in your roulette, then there should be how many prize-name in this array; the order is counter-clockwise to your roulette
 
 
 
@@ -118,7 +120,7 @@ usage: when you click start button, start_callback will be triggered
 type: function      
 default: () => {}    
 parameter: (prize) => {}          
-usage: it will be triggered when roulette rotate over, and it will return a prize which is recorded in your prize_arr and it is prize at this round
+usage: it will be triggered when roulette rotate over, and it will return a winning-prize at this round
 
 
 ## Thank You for Your Use
