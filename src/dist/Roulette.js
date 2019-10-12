@@ -34,15 +34,15 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var Roulette = function Roulette(_ref) {
   var _ref$reset_callback = _ref.reset_callback,
       reset_callback = _ref$reset_callback === void 0 ? function () {} : _ref$reset_callback,
-      _ref$trigger_callback = _ref.trigger_callback,
-      trigger_callback = _ref$trigger_callback === void 0 ? function () {} : _ref$trigger_callback,
+      _ref$start_callback = _ref.start_callback,
+      start_callback = _ref$start_callback === void 0 ? function () {} : _ref$start_callback,
       _ref$has_reset = _ref.has_reset,
       has_reset = _ref$has_reset === void 0 ? true : _ref$has_reset,
       _ref$start_text = _ref.start_text,
       start_text = _ref$start_text === void 0 ? 'Start!' : _ref$start_text,
       _ref$reset_text = _ref.reset_text,
       reset_text = _ref$reset_text === void 0 ? 'Reset' : _ref$reset_text,
-      props = _objectWithoutProperties(_ref, ["reset_callback", "trigger_callback", "has_reset", "start_text", "reset_text"]);
+      props = _objectWithoutProperties(_ref, ["reset_callback", "start_callback", "has_reset", "start_text", "reset_text"]);
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -68,7 +68,7 @@ var Roulette = function Roulette(_ref) {
 
   var clickToTrigger = function clickToTrigger() {
     set_start(true);
-    trigger_callback();
+    start_callback();
   };
 
   return _react.default.createElement(_styleComp.RouletteContainer, {
@@ -92,10 +92,8 @@ var RouletteBody = function RouletteBody(_ref2) {
       roulette_img_on_highlight = _ref2.roulette_img_on_highlight,
       highlight_img = _ref2.highlight_img,
       pointer_img = _ref2.pointer_img,
-      box_size = _ref2.box_size,
       start = _ref2.start,
       prize_arr = _ref2.prize_arr,
-      align_line = _ref2.align_line,
       set_show_reset = _ref2.set_show_reset,
       set_forbid_start = _ref2.set_forbid_start,
       _ref2$on_complete = _ref2.on_complete,
@@ -152,7 +150,6 @@ var RouletteBody = function RouletteBody(_ref2) {
   return _react.default.createElement(_styledComponents.ThemeProvider, {
     theme: Object.assign({}, _styleComp.general_theme)
   }, _react.default.createElement(_styleComp.RouletteBox, {
-    box_size: box_size,
     className: "Roulette-box"
   }, _react.default.createElement(_styleComp.RouletteBoard, {
     ref: UBoardRef,

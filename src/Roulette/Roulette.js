@@ -1,6 +1,6 @@
 const Roulette = ({
   reset_callback = () => {},
-  trigger_callback = () => {},
+  start_callback = () => {},
   has_reset = true,
   start_text = 'Start!',
   reset_text = 'Reset',
@@ -18,7 +18,7 @@ const Roulette = ({
   }
   const clickToTrigger = () => {
     set_start(true)
-    trigger_callback()
+    start_callback()
   }
 
   return (
@@ -56,10 +56,8 @@ const RouletteBody = ({
   roulette_img_on_highlight,
   highlight_img,
   pointer_img,
-  box_size,
   start,
   prize_arr,
-  align_line,
   set_show_reset,
   set_forbid_start,
   on_complete = () => {}
@@ -115,7 +113,6 @@ const RouletteBody = ({
   return (
     <ThemeProvider theme={Object.assign({}, general_theme)}>
       <RouletteBox
-        box_size={box_size}
         className="Roulette-box"
       >
         <RouletteBoard
