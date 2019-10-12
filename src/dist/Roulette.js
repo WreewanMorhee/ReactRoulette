@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -15,7 +15,7 @@ var _styledComponents = require("styled-components");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -31,7 +31,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Roullette = function Roullette(_ref) {
+var Roulette = function Roulette(_ref) {
   var _ref$reset_callback = _ref.reset_callback,
       reset_callback = _ref$reset_callback === void 0 ? function () {} : _ref$reset_callback,
       _ref$trigger_callback = _ref.trigger_callback,
@@ -71,25 +71,25 @@ var Roullette = function Roullette(_ref) {
     trigger_callback();
   };
 
-  return _react["default"].createElement(_styleComp.RoulletteContainer, {
+  return _react.default.createElement(_styleComp.RouletteContainer, {
     className: "roulette-container"
-  }, _react["default"].createElement(RoulletteBody, _extends({
+  }, _react.default.createElement(RouletteBody, _extends({
     start: start,
     set_show_reset: set_show_reset,
     set_forbid_start: set_forbid_start
-  }, props)), _react["default"].createElement(_styleComp.RoulleteBtn, {
+  }, props)), _react.default.createElement(_styleComp.RoulleteBtn, {
     forbid_start: forbid_start,
     onClick: clickToTrigger,
     className: "start-btn"
-  }, start_text), has_reset && show_reset && _react["default"].createElement(_styleComp.RoulleteBtn, {
+  }, start_text), has_reset && show_reset && _react.default.createElement(_styleComp.RoulleteBtn, {
     onClick: clickToReset,
     className: "reset-btn"
   }, reset_text));
 };
 
-var RoulletteBody = function RoulletteBody(_ref2) {
-  var roullette_img_under_highlight = _ref2.roullette_img_under_highlight,
-      roullette_img_on_highlight = _ref2.roullette_img_on_highlight,
+var RouletteBody = function RouletteBody(_ref2) {
+  var roulette_img_under_highlight = _ref2.roulette_img_under_highlight,
+      roulette_img_on_highlight = _ref2.roulette_img_on_highlight,
       highlight_img = _ref2.highlight_img,
       pointer_img = _ref2.pointer_img,
       box_size = _ref2.box_size,
@@ -149,24 +149,24 @@ var RoulletteBody = function RoulletteBody(_ref2) {
       reset_roulette();
     }
   }, [start]);
-  return _react["default"].createElement(_styledComponents.ThemeProvider, {
+  return _react.default.createElement(_styledComponents.ThemeProvider, {
     theme: Object.assign({}, _styleComp.general_theme)
-  }, _react["default"].createElement(_styleComp.RoulletteBox, {
+  }, _react.default.createElement(_styleComp.RouletteBox, {
     box_size: box_size,
-    className: "roullette-box"
-  }, _react["default"].createElement(_styleComp.RoulletteBoard, {
+    className: "Roulette-box"
+  }, _react.default.createElement(_styleComp.RouletteBoard, {
     ref: UBoardRef,
-    roullette_img: roullette_img_under_highlight,
-    className: "roullette-board-u"
-  }), _react["default"].createElement(_styleComp.HighLightArea, {
+    Roulette_img: roulette_img_under_highlight,
+    className: "Roulette-board-u"
+  }), _react.default.createElement(_styleComp.HighLightArea, {
     ref: HighlightRef,
     highlight_img: highlight_img,
     className: "highlight-area"
-  }), _react["default"].createElement(_styleComp.RoulletteBoard, {
+  }), _react.default.createElement(_styleComp.RouletteBoard, {
     ref: OBoardRef,
-    roullette_img: roullette_img_on_highlight,
-    className: "roullette-board-o"
-  }), _react["default"].createElement(_styleComp.Pointer, {
+    Roulette_img: roulette_img_on_highlight,
+    className: "Roulette-board-o"
+  }), _react.default.createElement(_styleComp.Pointer, {
     pointer_img: pointer_img,
     className: "pointer"
   })));
@@ -178,5 +178,5 @@ var generate_random_number = function generate_random_number() {
   return Math.floor(Math.random() * end) + start;
 };
 
-var _default = Roullette;
-exports["default"] = _default;
+var _default = Roulette;
+exports.default = _default;

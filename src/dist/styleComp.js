@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.general_theme = exports.RoulleteBtn = exports.Pointer = exports.HighLightArea = exports.RoulletteBoard = exports.RoulletteBox = exports.RoulletteContainer = void 0;
+exports.general_theme = exports.RoulleteBtn = exports.Pointer = exports.HighLightArea = exports.RouletteBoard = exports.RouletteBox = exports.RouletteContainer = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _templateObject6() {
   var data = _taggedTemplateLiteral(["\n  width: 45%;\n  padding-bottom: 17.1%;\n  background: black;\n  cursor: pointer;\n  margin: 0 auto;\n  margin-top: 12%;\n  ", "\n"]);
@@ -73,25 +73,25 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var RoulletteContainer = _styledComponents["default"].div(_templateObject());
+var RouletteContainer = _styledComponents.default.div(_templateObject());
 
-exports.RoulletteContainer = RoulletteContainer;
+exports.RouletteContainer = RouletteContainer;
 
-var RoulletteBox = _styledComponents["default"].div(_templateObject2());
+var RouletteBox = _styledComponents.default.div(_templateObject2());
 
-exports.RoulletteBox = RoulletteBox;
+exports.RouletteBox = RouletteBox;
 
-var RoulletteBoard = _styledComponents["default"].div(_templateObject3(), function (_ref) {
+var RouletteBoard = _styledComponents.default.div(_templateObject3(), function (_ref) {
   var theme = _ref.theme;
   return theme;
 }, function (_ref2) {
-  var roullette_img = _ref2.roullette_img;
-  return roullette_img;
+  var Roulette_img = _ref2.Roulette_img;
+  return Roulette_img;
 });
 
-exports.RoulletteBoard = RoulletteBoard;
+exports.RouletteBoard = RouletteBoard;
 
-var HighLightArea = _styledComponents["default"].div(_templateObject4(), function (_ref3) {
+var HighLightArea = _styledComponents.default.div(_templateObject4(), function (_ref3) {
   var theme = _ref3.theme;
   return theme;
 }, function (_ref4) {
@@ -101,7 +101,7 @@ var HighLightArea = _styledComponents["default"].div(_templateObject4(), functio
 
 exports.HighLightArea = HighLightArea;
 
-var Pointer = _styledComponents["default"].div(_templateObject5(), function (_ref5) {
+var Pointer = _styledComponents.default.div(_templateObject5(), function (_ref5) {
   var theme = _ref5.theme;
   return theme;
 }, function (_ref6) {
@@ -111,7 +111,7 @@ var Pointer = _styledComponents["default"].div(_templateObject5(), function (_re
 
 exports.Pointer = Pointer;
 
-var RoulleteBtn = _styledComponents["default"].div(_templateObject6(), function (_ref7) {
+var RoulleteBtn = _styledComponents.default.div(_templateObject6(), function (_ref7) {
   var forbid_start = _ref7.forbid_start;
   return forbid_start && 'pointer-events: none';
 });
