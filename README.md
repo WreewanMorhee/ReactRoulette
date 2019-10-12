@@ -40,7 +40,15 @@ import roulette_img_under_highlight from './images/rou_under_high.png'
 import roulette_img_on_highlight from './images/rou_on_high.png'
 ```
 
-## Common Props        
+## Common Props   
+
+
+### highlight_img
+type: string        
+default: ''      
+usage: when roulette rotate over, hightlight will bling bling, its purpose is to highlight the winning-prize;      
+HIGHLY RECOMMENDED: the ratio of this image should be square
+     
 
 ### roulette_img_under_highlight         
 type: string    
@@ -57,14 +65,6 @@ HIGHLY RECOMMENDED: the ratio of this image should be square
 
 #### PS1: you can put your roulette's body image on one of them or both; just due to different design, something will be under the highlight and something will be on the highlight, so let you have more option to combine your roulette
 #### PS2: your roulette should put like this: ![alt text](https://event.hearst.com.tw/uiuxstoredemo/roulettegame/images/correct_rou.jpg) not like this: ![alt text](https://event.hearst.com.tw/uiuxstoredemo/roulettegame/images/wrong_rou.jpg)
-
-
-### highlight_img
-type: string        
-default: ''      
-usage: when roulette rotate over, hightlight will bling bling, its purpose is to highlight the winning-prize;      
-HIGHLY RECOMMENDED: the ratio of this image should be square
-
 
 
 ### pointer_img
