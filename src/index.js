@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _Roullette = _interopRequireDefault(require("./dist/Roullette"));
+var _Roulette = _interopRequireDefault(require("./dist/Roulette"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _default = _Roullette["default"];
+var _default = _Roulette["default"];
 exports["default"] = _default;

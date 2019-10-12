@@ -38,16 +38,32 @@ var Roullette = function Roullette(_ref) {
       trigger_callback = _ref$trigger_callback === void 0 ? function () {} : _ref$trigger_callback,
       _ref$has_reset = _ref.has_reset,
       has_reset = _ref$has_reset === void 0 ? true : _ref$has_reset,
-      props = _objectWithoutProperties(_ref, ["reset_callback", "trigger_callback", "has_reset"]);
+      _ref$start_text = _ref.start_text,
+      start_text = _ref$start_text === void 0 ? 'Start!' : _ref$start_text,
+      _ref$reset_text = _ref.reset_text,
+      reset_text = _ref$reset_text === void 0 ? 'Reset' : _ref$reset_text,
+      props = _objectWithoutProperties(_ref, ["reset_callback", "trigger_callback", "has_reset", "start_text", "reset_text"]);
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       start = _useState2[0],
       set_start = _useState2[1];
 
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      show_reset = _useState4[0],
+      set_show_reset = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      forbid_start = _useState6[0],
+      set_forbid_start = _useState6[1];
+
   var clickToReset = function clickToReset() {
     set_start(false);
     reset_callback();
+    set_show_reset(false);
+    set_forbid_start(true);
   };
 
   var clickToTrigger = function clickToTrigger() {
@@ -58,14 +74,17 @@ var Roullette = function Roullette(_ref) {
   return _react["default"].createElement(_styleComp.RoulletteContainer, {
     className: "roulette-container"
   }, _react["default"].createElement(RoulletteBody, _extends({
-    start: start
+    start: start,
+    set_show_reset: set_show_reset,
+    set_forbid_start: set_forbid_start
   }, props)), _react["default"].createElement(_styleComp.RoulleteBtn, {
+    forbid_start: forbid_start,
     onClick: clickToTrigger,
     className: "start-btn"
-  }, "Start!"), has_reset && _react["default"].createElement(_styleComp.RoulleteBtn, {
+  }, start_text), has_reset && show_reset && _react["default"].createElement(_styleComp.RoulleteBtn, {
     onClick: clickToReset,
     className: "reset-btn"
-  }, "Reset"));
+  }, reset_text));
 };
 
 var RoulletteBody = function RoulletteBody(_ref2) {
@@ -77,42 +96,57 @@ var RoulletteBody = function RoulletteBody(_ref2) {
       start = _ref2.start,
       prize_arr = _ref2.prize_arr,
       align_line = _ref2.align_line,
+      set_show_reset = _ref2.set_show_reset,
+      set_forbid_start = _ref2.set_forbid_start,
       _ref2$on_complete = _ref2.on_complete,
       on_complete = _ref2$on_complete === void 0 ? function () {} : _ref2$on_complete;
   var UBoardRef = (0, _react.useRef)(null);
   var OBoardRef = (0, _react.useRef)(null);
   var HighlightRef = (0, _react.useRef)(null);
   var prize_num = generate_random_number(0, prize_arr.length - 1);
+
+  var trigger_roulette = function trigger_roulette() {
+    _gsap.TweenLite.to([UBoardRef.current, OBoardRef.current], 3, {
+      rotation: 360 * 10,
+      ease: _gsap.Power2.easeIn,
+      onComplete: function onComplete() {
+        _gsap.TweenLite.to([UBoardRef.current, OBoardRef.current], 3, {
+          rotation: 360 * 15 + 360 * prize_num / prize_arr.length,
+          ease: _gsap.Power2.easeOut,
+          onComplete: function onComplete() {
+            _gsap.TweenMax.to(HighlightRef.current, 0.5, {
+              alpha: 1,
+              yoyo: true,
+              repeat: -1
+            });
+
+            set_show_reset(true);
+            on_complete(prize_arr[prize_num]);
+          }
+        });
+      }
+    });
+  };
+
+  var reset_roulette = function reset_roulette() {
+    _gsap.TweenLite.to([UBoardRef.current, OBoardRef.current], 1, {
+      rotation: 0,
+      ease: _gsap.Power2.easeIn,
+      onComplete: function onComplete() {
+        set_forbid_start(false);
+      }
+    });
+
+    _gsap.TweenMax.to(HighlightRef.current, 0.5, {
+      opacity: 0
+    });
+  };
+
   (0, _react.useEffect)(function () {
     if (start) {
-      _gsap.TweenLite.to([UBoardRef.current, OBoardRef.current], 3, {
-        rotation: 360 * 10,
-        ease: _gsap.Power2.easeIn,
-        onComplete: function onComplete() {
-          _gsap.TweenLite.to([UBoardRef.current, OBoardRef.current], 3, {
-            rotation: 360 * 15 + 360 * prize_num / prize_arr.length,
-            ease: _gsap.Power2.easeOut,
-            onComplete: function onComplete() {
-              _gsap.TweenMax.to(HighlightRef.current, 0.5, {
-                alpha: 1,
-                yoyo: true,
-                repeat: -1
-              });
-
-              on_complete(prize_arr[prize_num]);
-            }
-          });
-        }
-      });
+      trigger_roulette();
     } else {
-      _gsap.TweenLite.to([UBoardRef.current, OBoardRef.current], 0.5, {
-        rotation: 0,
-        ease: _gsap.Power2.easeIn
-      });
-
-      _gsap.TweenMax.to(HighlightRef.current, 0.5, {
-        opacity: 0
-      });
+      reset_roulette();
     }
   }, [start]);
   return _react["default"].createElement(_styledComponents.ThemeProvider, {

@@ -12,7 +12,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  width: 45%;\n  padding-bottom: 17.1%;\n  background: black;\n  cursor: pointer;\n  margin: 0 auto;\n  margin-top: 12%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 45%;\n  padding-bottom: 17.1%;\n  background: black;\n  cursor: pointer;\n  margin: 0 auto;\n  margin-top: 12%;\n  ", "\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -111,7 +111,10 @@ var Pointer = _styledComponents["default"].div(_templateObject5(), function (_re
 
 exports.Pointer = Pointer;
 
-var RoulleteBtn = _styledComponents["default"].div(_templateObject6());
+var RoulleteBtn = _styledComponents["default"].div(_templateObject6(), function (_ref7) {
+  var forbid_start = _ref7.forbid_start;
+  return forbid_start && 'pointer-events: none';
+});
 
 exports.RoulleteBtn = RoulleteBtn;
 var general_theme = {
