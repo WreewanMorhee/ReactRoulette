@@ -1,5 +1,5 @@
 ## React Roulette Game
-React Beauty Game is a plugin for whom want to have roulette game in project
+React Roulette Game is a plugin for whom want to have roulette game in project
 [DEMO](https://event.hearst.com.tw/uiuxstoredemo/roulettegame/)
 
 
@@ -48,7 +48,7 @@ type: string
 default: ''      
 usage: when roulette rotate over, hightlight will bling bling, its purpose is to highlight the winning-prize;      
 HIGHLY RECOMMENDED: the ratio of this image should be square
-     
+
 
 ### roulette_img_under_highlight         
 type: string    
@@ -70,7 +70,7 @@ HIGHLY RECOMMENDED: the ratio of this image should be square
 ### pointer_img
 type: string        
 default: ''      
-usage: to point the winning-prize;       
+usage: roulette's pointer, to point the winning-prize;       
 HIGHLY RECOMMENDED: the ratio of this image should be square
 
 #### PS: the prize you win always on top, like this:![alt text](https://event.hearst.com.tw/uiuxstoredemo/roulettegame/images/winning.jpg), so your pointer should always poit toward that one
