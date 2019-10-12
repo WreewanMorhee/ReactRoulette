@@ -5,9 +5,11 @@ const Roullette = ({
   ...props
 }) => {
   const [start, set_start] = useState(false)
+  const [show_reset, set_show_reset] = useState(false)
   const clickToReset = () => {
     set_start(false)
     reset_callback()
+    set_show_reset(false)
   }
   const clickToTrigger = () => {
     set_start(true)
@@ -16,7 +18,7 @@ const Roullette = ({
 
   return (
     <RoulletteContainer className="roulette-container">
-      <RoulletteBody start={start} {...props} />
+      <RoulletteBody start={start} {...props} set_show_reset={set_show_reset} />
       <RoulleteBtn
         onClick={clickToTrigger}
         className="start-btn"
@@ -24,7 +26,7 @@ const Roullette = ({
         Start!
       </RoulleteBtn>
 
-      {has_reset && (
+      {(has_reset && show_reset) && (
         <RoulleteBtn
           onClick={clickToReset}
           className="reset-btn"
@@ -47,6 +49,7 @@ const RoulletteBody = ({
   start,
   prize_arr,
   align_line,
+  set_show_reset,
   on_complete = () => {}
 }) => {
   const UBoardRef = useRef(null)
@@ -69,6 +72,7 @@ const RoulletteBody = ({
                 yoyo: true,
                 repeat: -1
               })
+              set_show_reset(true)
               on_complete(prize_arr[prize_num])
             }
           })
