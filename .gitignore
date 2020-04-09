@@ -3,6 +3,8 @@
 # dependencies
 /node_modules
 /.pnp
+/images
+/js_lib
 .pnp.js
 
 # testing
@@ -21,3 +23,26 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+js_lib/img/start.jpg
+js_lib/img/logo.png
+js_lib/img/hightlight.png
+images/rou_on_high.png
+images/hightlight.png
+App.js
+App.css
+js_lib/img/roullette_board.png
+js_lib/img/rou_under_high.png
+js_lib/img/highlight_area.png
+js_lib/App.js
+images/start.jpg
+images/pointer.png
+js_lib/img/rou_on_high.png
+js_lib/img/pointer.png
+index1.html
+index1.css
+images/favicon.png
+yarn.lock
+images/rou_under_high.png
+js_lib/img/favicon.png
+images/background.jpg
+js_lib/img/background.jpg

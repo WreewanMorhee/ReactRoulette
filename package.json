@@ -1,15 +1,25 @@
 {
-  "name": "hearst-tw",
-  "version": "1.0.0",
-  "main": "custom-tracking.js",
-  "private": true,
+  "name": "react-roulette-game",
+  "version": "1.0.3",
+  "main": "./index.js",
+  "description": "let you use roulette game in your react project",
   "scripts": {
     "start": "webpack --watch --config webpack.dev.js",
     "dev": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "WreewanMorhee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WreewanMorhee/ReactRoulette"
+  },
+  "keywords": [
+    "roulette",
+    "roulette game",
+    "react"
+  ],
+  "homepage": "https://github.com/WreewanMorhee/ReactRoulette",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.0.0",
@@ -21,22 +31,12 @@
     "webpack-merge": "^4.2.1",
     "webpack-notifier": "^1.8.0"
   },
-  "description": "",
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.6.2",
-    "classnames": "^2.2.6",
-    "css-loader": "^3.2.0",
-    "file-loader": "^4.2.0",
     "gsap": "^2.1.3",
-    "interweave": "^11.2.0",
-    "node-sass": "^4.12.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-slick": "^0.25.2",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.0",
     "styled-components": "^4.4.0"
   }
 }
